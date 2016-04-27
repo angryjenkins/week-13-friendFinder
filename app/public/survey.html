@@ -18,18 +18,30 @@
 			</div>
 		</div>
 	</div>
-	<form action="" method="POST" role="form" class="form-horizontal">
-		<legend>Find a Friend!</legend>
-	
-		<div class="form-group">
-			<label for="">Which color do you prefer?</label>
-			<input type="text" class="form-control" id="" placeholder="Input field">
-		</div>
-	
+	<div class="container">
+		<form action="" method="POST" role="form" class="form-horizontal">
+			<legend>Find a Friend!</legend>
 		
-	
-		<button type="submit" class="btn btn-primary">Submit</button>
-	</form>
-	
+			<div class="form-group">
+				<label for="">Which color do you prefer?</label>
+				<div class="radio">
+					<label>
+						<input type="radio" name="favColor" id="favColor" value="red" required>
+						Red
+					</label>
+					<label>
+						<input type="radio" name="favColor" id="favColor" value="green" required>
+						Green
+					</label>
+					<label>
+						<input type="radio" name="favColor" id="favColor" value="blue" required>
+						Blue
+					</label>
+				</div>
+			</div>
+		
+			<button id="submitter" type="submit" class="btn btn-primary">Submit</button>
+		</form>
+	</div>
 </body>
 </html>
