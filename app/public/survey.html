@@ -21,25 +21,66 @@
 	<div class="container">
 		<form action="" method="POST" role="form" class="form-horizontal">
 			<legend>Find a Friend!</legend>
-		
+
 			<div class="form-group">
 				<label for="">Which color do you prefer?</label>
 				<div class="radio">
 					<label>
-						<input type="radio" name="favColor" id="favColor" value="red" required>
+						<input type="radio" name="favColor" value="red" required>
 						Red
 					</label>
 					<label>
-						<input type="radio" name="favColor" id="favColor" value="green" required>
+						<input type="radio" name="favColor" value="green" required>
 						Green
 					</label>
 					<label>
-						<input type="radio" name="favColor" id="favColor" value="blue" required>
+						<input type="radio" name="favColor" value="blue" required>
 						Blue
 					</label>
 				</div>
+
+				<label for="">What sport do you like the most?</label>
+				<div class="radio">
+					<label>
+						<input type="radio" name="favSport" value="baseball" required>
+						Baseball
+					</label>
+					<label>
+						<input type="radio" name="favSport" value="football" required>
+						Football
+					</label>
+					<label>
+						<input type="radio" name="favSport" value="basketball" required>
+						Basketball
+					</label>
+					<label>
+						<input type="radio" name="favSport" value="hockey" required>
+						Hockey
+					</label>
+				</div>
+
+				<label for="#superpower">Which suporpower would you prefer?</label>
+				<div class="radio" id="superpower">
+					<label>
+						<input type="radio" name="superpower" value="super strength" required>
+						Super Strength
+					</label>
+					<label>
+						<input type="radio" name="superpower" value="invisibility" required>
+						invisibility
+					</label>
+					<label>
+						<input type="radio" name="superpower" value="flight" required>
+						Flight
+					</label>
+					<label>
+						<input type="radio" name="superpower" value="x-ray vision" required>
+						XiRay Vision
+					</label>
+				</div>
+
 			</div>
-		
+
 			<button id="submitter" type="submit" class="btn btn-primary">Submit</button>
 		</form>
 	</div>
