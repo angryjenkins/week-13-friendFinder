@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>Friend Finder Survet</title>
 	<!-- Latest compiled and minified CSS & JS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="http://bootswatch.com/readable/bootstrap.min.css">
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
@@ -23,62 +23,65 @@
 			<legend>Find a Friend!</legend>
 
 			<div class="form-group">
-				<label for="">Which color do you prefer?</label>
-				<div class="radio">
+				<label for="#one"><span class="badge">1</span> Which color do you prefer?</label>
+				<div class="radio" id="one">
 					<label>
-						<input type="radio" name="favColor" value="red" required>
+						<input type="radio" name="favColor" value="Red" required>
 						Red
 					</label>
 					<label>
-						<input type="radio" name="favColor" value="green" required>
+						<input type="radio" name="favColor" value="Green" required>
 						Green
 					</label>
 					<label>
-						<input type="radio" name="favColor" value="blue" required>
+						<input type="radio" name="favColor" value="Blue" required>
 						Blue
 					</label>
 				</div>
-
-				<label for="">What sport do you like the most?</label>
-				<div class="radio">
+			</div>
+			<div class='form-group'>
+				<label for="#two"><span class="badge">2</span> What sport do you like the most?</label>
+				<div class="radio" id="two">
 					<label>
-						<input type="radio" name="favSport" value="baseball" required>
+						<input type="radio" name="favSport" value="Baseball" required>
 						Baseball
 					</label>
 					<label>
-						<input type="radio" name="favSport" value="football" required>
+						<input type="radio" name="favSport" value="Football" required>
 						Football
 					</label>
 					<label>
-						<input type="radio" name="favSport" value="basketball" required>
+						<input type="radio" name="favSport" value="Basketball" required>
 						Basketball
 					</label>
 					<label>
-						<input type="radio" name="favSport" value="hockey" required>
+						<input type="radio" name="favSport" value="Hockey" required>
 						Hockey
 					</label>
 				</div>
 
-				<label for="#superpower">Which suporpower would you prefer?</label>
-				<div class="radio" id="superpower">
+			</div>
+
+			<div class='form-group'>
+				<label for="#three"><span class="badge">3</span> Which country would you rather travel to?</label>
+				<div class="radio" id="three">
 					<label>
-						<input type="radio" name="superpower" value="super strength" required>
-						Super Strength
+						<input type="radio" name="favCountry" value="France" required>
+						France
 					</label>
 					<label>
-						<input type="radio" name="superpower" value="invisibility" required>
-						invisibility
+						<input type="radio" name="favCountry" value="China" required>
+						China
 					</label>
 					<label>
-						<input type="radio" name="superpower" value="flight" required>
-						Flight
+						<input type="radio" name="favCountry" value="Austraila" required>
+						Australia
 					</label>
 					<label>
-						<input type="radio" name="superpower" value="x-ray vision" required>
-						XiRay Vision
+						<input type="radio" name="favCountry" value="Brazil" required>
+					Brazil
 					</label>
 				</div>
-
 			</div>
 
 			<button id="submitter" type="submit" class="btn btn-primary">Submit</button>
