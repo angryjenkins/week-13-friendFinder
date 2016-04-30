@@ -11,8 +11,6 @@ var port = process.env.PORT || 3000; // Sets an initial port. We'll use this lat
 var staticContentFolder = __dirname + '/app/public';
 app.use(express.static(staticContentFolder));  
 
-
-
 // set the static files location /public/img will be /img for users// BodyParser makes it easy for our server to interpret data sent to it.
 // The code below is pretty standard.
 
