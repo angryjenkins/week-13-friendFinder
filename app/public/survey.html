@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<form action="" method="POST" role="form" class="form-horizontal">
+		<form action="/api/friends" method="POST" role="form" class="form-horizontal">
 			<legend>Find a Friend!</legend>
 
 			
@@ -28,7 +28,7 @@
 					<label class="control-label" for="name">Name</label>
 				</div>
 				<div class="col-md-10">
-					<input type="text" class="form-control" id="name" placeholder="Enter Your Name">
+					<input type="text" class="form-control" name="name" id="name" placeholder="Enter Your Name">
 				</div>
 			</div>
 
@@ -39,7 +39,7 @@
 					<label class="control-label" for="pic">Image URL</label>
 				</div>
 				<div class="col-md-10">
-					<input type="url" class="form-control" id="pic" placeholder="Picture URL">
+					<input type="url" class="form-control" id="pic" name="pic" placeholder="Picture URL">
 				</div>
 			</div>
 			
@@ -257,19 +257,19 @@
 				<label class="control-label" for="ten"><span class="badge">10</span> What is your favorite board game?</label>
 				<div class="radio" id="ten">
 					<label>
-						<input type="radio" name="dinnerGuest" value=1 required>
+						<input type="radio" name="boardGame" value=1 required>
 						Monopoly
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=2 required>
+						<input type="radio" name="boardGame" value=2 required>
 						CandyLand
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=3 required>
+						<input type="radio" name="boardGame" value=3 required>
 						Clue
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=4 required>
+						<input type="radio" name="boardGame" value=4 required>
 						Life
 					</label>
 				</div>
@@ -307,27 +307,39 @@
 	</div>
 	<script type="text/javascript">
 		
-    	$('#submitter').click(function(){
-    		var friendsData = {
+    	$('#submitter').on('click', function(){
+    		var formData = {
 	    		name: $("#name").val(),
 	    		pic: $("#pic").val(),
-	    		score: $("#one").val() + $("#two").val() + $("#three").val() + $("#four").val() + $("#five").val() + $("#six").val() + $("#seven").val() + $("#eight").val() + $("#nine").val() + $("#ten").val();
+	    		scores: [
+	    			$("input[name=favColor]:checked").val(), 
+				 	$("input[name=favSport]:checked").val(), 
+				 	$("input[name=favCountry]:checked").val(), 
+				 	$("input[name=hobby]:checked").val(), 
+				 	$("input[name=dinnerGuest]:checked").val(), 
+				 	$("input[name=transportation]:checked").val(), 
+				 	$("input[name=vs_zombies]:checked").val(), 
+				 	$("input[name=animalFear]:checked").val(), 
+				 	$("input[name=cartoon]:checked").val(), 
+				 	$("input[name=boardGame]:checked").val()
+					]
 	    	}
 
+	    	console.log(formData);
 	    	// Grab the URL
-	    	// var currentURL = window.location.origin;
+	    	var currentURL = window.location.origin;
 
 	    	// post the data to the friends API via AJAX 
-	    	$.post("localhost:3000/api/friends", userData, function(friendsData){
+	    	$.post(currentURL + "/api/friends", function(formData){
+
 	    		// Grab the result from the AJAX post so that the best match's name and pic are displayed.
-	    		$("#matchName").text(friendsData.name);
-	    		$('#matchImg').attr("src", friendsData.pic);
+	    		$("#matchName").text(formData.name);
+	    		$('#matchImg').attr("src", formData.pic);
 
 		    	// Show the modal with the best match 
 		    	$("#friendMatch").modal('toggle');
 
 	    	});
-
 	    	return false;
     	});		
 	</script>
