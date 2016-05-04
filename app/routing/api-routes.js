@@ -73,12 +73,14 @@ app.post('/api/friends', function(req, res){
             return parseFloat(b.compatibility) - parseFloat(a.compatibility);
         });
 
-        var match = scoreboard[0].name;
+        var match = scoreboard[0];
 
 
-        console.log(formData.name + '! Meet your new friend .... %s!', match);
+        console.log(formData.name + '! Meet your new friend .... %s!', match.name);
 
         friendsArray.push(formData);
+
+        res.json(match);
 
 
 
