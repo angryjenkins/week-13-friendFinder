@@ -96,6 +96,7 @@ app.post('/api/friends', function(req, res){
   var match = scoreboard[0];
 
   console.log(formData.name + ': Meet your new friend .... %s!', match.name);
+  console.log(match);
 
   friendsArray.push(formData);
 
