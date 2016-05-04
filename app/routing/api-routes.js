@@ -25,25 +25,20 @@ app.post('/api/friends', function(req, res){
 // res.json(true);
 //add answer comparison logic.
 
-        for(i=0;i<friendsArray.length;i++){
-                var compatibility=0;
-                var diff=0;
-
-                for (x=0;x<10;x++){
-                      if (formData.scores[x] - friendsArray[i].scores[x]){
-                        compatibility++;
-                      } 
-
-                }
+        for(var key in friendsArray){
+            var compatibility=0;
+            var diff=0;
 
 
-                var friend = {
-                        name: friendsArray[i].name,
-                        compatibility: compatibility
-                }
-                console.log('Friend: %s', friend.name);
-                console.log('Compatibility: %s', friend.compatibility);
-                comparisons.push(friend);
+            var friend = {
+                    name: friendsArray[i].name,
+                    compatibility: compatibility
+            }
+
+            
+            console.log('Friend: %s', friend.name);
+            console.log('Compatibility: %s', friend.compatibility);
+            comparisons.push(friend);
        }
 });
 
