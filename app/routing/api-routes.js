@@ -17,9 +17,9 @@ app.post('/api/friends', function(req, res){
         console.log("friend finder submitted! formData below");
 
         var formData = req.body;
+        var scoreboard = [];
+
         console.log(formData);
-        
-        var bestFriend = friendsArray[0].name;
 
         for(i=0;i<friendsArray.length;i++){
           var compatibility = 0;
@@ -54,19 +54,29 @@ app.post('/api/friends', function(req, res){
           if(friendsArray[i].boardGame == formData.boardGame){
             compatibility++;
           }
-          console.log(friendsArray[i].name + " compatibility rating: %s", compatibility);
 
-          formData.compatibility = compatibility;
 
-          if(i != 0){
-            if(formData.compatibility > friendsArray[i-1].compatibility){
-                var bestFriend = this.name;
-            }
+          var score = {
+            name: friendsArray[i].name,
+            compatibility: compatibility
           }
-          
+
+          scoreboard.push(score);
+
         }
 
-        console.log('Your new friend is .... %s!', bestFriend);
+        console.log(scoreboard);
+        //need to compare objects here to determine new best friend.
+
+      
+        scoreboard.sort(function(a, b) {
+            return parseFloat(b.compatibility) - parseFloat(a.compatibility);
+        });
+
+        var match = scoreboard[0].name;
+
+
+        console.log(formData.name + '! Meet your new friend .... %s!', match);
 
         friendsArray.push(formData);
 
