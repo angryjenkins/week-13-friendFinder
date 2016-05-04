@@ -55,7 +55,6 @@ app.post('/api/friends', function(req, res){
             compatibility++;
           }
 
-
           var score = {
             name: friendsArray[i].name,
             compatibility: compatibility
@@ -66,9 +65,8 @@ app.post('/api/friends', function(req, res){
         }
 
         console.log(scoreboard);
-        //need to compare objects here to determine new best friend.
 
-      
+        //sort the scores by descending compatibilty, the highest will be first.
         scoreboard.sort(function(a, b) {
             return parseFloat(b.compatibility) - parseFloat(a.compatibility);
         });
@@ -82,18 +80,7 @@ app.post('/api/friends', function(req, res){
 
         res.json(match);
 
+    });
 
-
-// res.json(true);
-//add answer comparison logic.
-
-});
-
-// app.post('/api/clear', function(req, res){
-//        // Empty out the arrays of data
-//        friendsArray = [];
-
-//        console.log(friendsArray);
-//    })
 
 }
