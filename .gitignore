@@ -2,3 +2,5 @@
 npm-debug.log
 .DS_Store
 /*.env
+/app/public/match.html
+homework_instructions.md
