@@ -27,16 +27,16 @@
 				<input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name.">
 			</div>
 
-			<div class="clearfix"></div>
 
 			<div class="form-group">
 				<label for="">Image URL</label>
 				<input type="text" class="form-control" id="pic" name="pic" placeholder="Picture URL">
 			</div>
-
-			<div class="clearfix"></div>
+			
 			<div class="col-md-6">
-				<div class="form-group">
+				
+			</div>
+			<div class="form-group">
 				<label class="control-label" for="one"><span class="badge">1</span> Which color do you prefer?</label>
 				<div class="radio" id="one">
 					<label>
@@ -53,8 +53,6 @@
 					</label>
 				</div>
 			</div>
-
-			<div class="clearfix"></div>
 
 			<div class='form-group'>
 				<label class="control-label" for="two"><span class="badge">2</span> What sport do you like the most?</label>
@@ -78,8 +76,6 @@
 				</div>
 			</div>
 
-			<div class="clearfix"></div>
-
 			<div class='form-group'>
 				<label class="control-label" for="three"><span class="badge">3</span> Which country would you rather travel to?</label>
 				<div class="radio" id="three">
@@ -101,8 +97,6 @@
 					</label>
 				</div>
 			</div>
-
-			<div class="clearfix"></div>
 
 			<div class='form-group'>
 				<label class="control-label" for="four"><span class="badge">4</span> What would you rather do with your spare time?</label>
@@ -126,8 +120,6 @@
 				</div>
 			</div>
 
-			<div class="clearfix"></div>
-
 		  	<div class='form-group'>
 				<label class="control-label" for="five"><span class="badge">5</span> Who would you rather have dinner with? </label>
 				<div class="radio" id="five">
@@ -149,10 +141,6 @@
 					</label>
 				</div>
 			</div>
-			</div>
-			
-
-			<div class="clearfix"></div>
 
 			<div class="form-group">
 				<label class="control-label" for="six"><span class="badge">6</span> What would you rather drive to work?</label>
@@ -171,8 +159,6 @@
 					</label>
 				</div>
 			</div>
-
-			<div class="clearfix"></div>
 
 			<div class='form-group'>
 				<label class="control-label" for="seven"><span class="badge">7</span> Which weapon would you use in a zombie attack?</label>
@@ -196,8 +182,6 @@
 				</div>
 			</div>
 
-			<div class="clearfix"></div>
-
 			<div class='form-group'>
 				<label class="control-label" for="eight"><span class="badge">8</span> What animal do you fear most?</label>
 				<div class="radio" id="eight">
@@ -219,8 +203,6 @@
 					</label>
 				</div>
 			</div>
-
-			<div class="clearfix"></div>
 
 			<div class='form-group'>
 				<label class="control-label" for="nine"><span class="badge">9</span> Which cartoon character do you prefer? </label>
@@ -244,8 +226,6 @@
 				</div>
 			</div>
 
-			<div class="clearfix"></div>
-
 		  <div class='form-group'>
 				<label class="control-label" for="ten"><span class="badge">10</span> What is your favorite board game?</label>
 				<div class="radio" id="ten">
@@ -268,7 +248,7 @@
 				</div>
 			</div>
 
-			<button type="submit" id="submitter" class="btn btn-primary" data-toggle="modal">Submit</button>
+			<button type="submit" id="submitter" class="btn btn-primary" data-toggle="modal" data-target="#friendMatch">Submit</button>
 			<a href="/" class="btn btn-default">Cancel</a>
 		</form>
 	</div>
@@ -282,12 +262,16 @@
 				<div class="modal-body">
 					<div class="row">
 						<div class="container">
-							<div class="col-md-12">
-								<div class="col-md-12">
-									<img src="" alt="your new friend" id="matchImg">
-
-								</div>
-								<h3 id="matchName"></h3>
+							<div class="col-md-6" id="matchName">
+								
+							</div>
+							<div class="col-md-6">
+								<img src="" alt="" id="matchImg">
+							</div>
+							<div class="col-md-12 text-center">
+								<ul id="matchList">
+									
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -300,9 +284,9 @@
 	</div>
 	<script type="text/javascript">
 
-    	$('#submitter').on('submit', function(){
+    	$('#submitter').on('click', function(){
 
-    		var formData = {
+			var formData = {
 	    		name: $("#name").val(),
 	    		pic: $("#pic").val(),
 					favColor: $('input[name=favColor]:checked').val(),
@@ -318,18 +302,26 @@
 	    	}
 
 	    	console.log(formData);
+	    	   		
+	    	var currentURL = window.location.origin;
 
-	    	formData.push(friendsArray);
+    		$.get(currentURL + "/api/match", match,
+		    function(data){
+		    	//response is bestfriend name and link to photo in the data object.
+		    	console.log(data.name,data.pic);
+		    	//We'll plug these items into the MODAL.
+	    		$("#matchName").text(data.name);
+	    		$("#matchImg").attr("src",data.pic).attr("alt", data.name);
 
-	    	// Grab the URL
-	    	// var currentURL = window.location.origin;
+	    		var commonList = $('#matchList');
 
-	    	// post the data to the friends API via AJAX
-	    	
+	    		for(i=0;i<match.common.length;i++){
+	    			commonlist += ("<li>" + match.common[i]);
+	    		};
+		    });
 
 	    	return false;
     	});
-
 	</script>
 </body>
 </html>

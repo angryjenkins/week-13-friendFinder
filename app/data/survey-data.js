@@ -15,7 +15,7 @@ var friendsArray = [
 	},
 	{
 		name: 'Buster',
-		pic:'https://avatars2.githubusercontent.com/u/14875183?v=3&s=460',
+		pic:'http://media4.popsugar-assets.com/files/2014/08/08/878/n/1922507/caef16ec354ca23b_thumb_temp_cover_file32304521407524949.xxxlarge/i/Funny-Cat-GIFs.jpg',
 		favColor: 'Red',
 		favSport: 'Hockey',
 		favCountry: 'Australia',

@@ -42,7 +42,6 @@ app.post('/api/friends', function(req, res){
     if(friendsArray[i].hobby == formData.hobby){
       compatibility++;
       commonGround.push("You both like to " + formData.hobby.toLowerCase());
-
     }
     if(friendsArray[i].dinnerGuest == formData.dinnerGuest){
       compatibility++;
@@ -62,17 +61,14 @@ app.post('/api/friends', function(req, res){
     if(friendsArray[i].animalFear == formData.animalFear){
       compatibility++;
       commonGround.push("You both would steer clear of a " + formData.animalFear.toLowerCase());
-
     }
     if(friendsArray[i].cartoon == formData.cartoon){
       compatibility++;
       commonGround.push("You both prefer " + formData.cartoon);
-
     }
     if(friendsArray[i].boardGame == formData.boardGame){
       compatibility++;
       commonGround.push("You both enjoy playing " + formData.boardGame);
-
     }
 
     var score = {
@@ -96,16 +92,16 @@ app.post('/api/friends', function(req, res){
   var match = scoreboard[0];
 
   console.log(formData.name + ': Meet your new friend .... %s!', match.name);
+
   console.log(match);
 
   friendsArray.push(formData);
 
   //REPLACE THIS WITH MODAL/PAGE DISPLAY!!
-  res.json(match);
+  // res.json(match);
 
-  // res.sendFile(path.join(__dirname + '/../public/match.html'));
-
-});
+  });
 
 
 }
+
