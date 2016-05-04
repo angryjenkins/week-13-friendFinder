@@ -19,7 +19,7 @@
 		</div>
 	</div>
 	<div class="container">
-		<form action="" method="POST" role="form" class="form-horizontal">
+		<form action=",,/api/friends" method="POST" role="form" class="form-horizontal">
 			<legend>Find a Friend!</legend>
 
 			
@@ -275,7 +275,7 @@
 				</div>
 			</div>
 
-			<a href="#" id="submitter" class="btn btn-primary">Submit</a>
+			<button type="submit" id="submitter" class="btn btn-primary">Submit</button>
 			<a href="/api/clear" class="btn btn-default">Cancel</a>
 		</form>
 	</div>
@@ -291,7 +291,7 @@
 						<div class="container">
 							<div class="col-md-12">
 								<div class="col-md-12">
-									<img src="" alt="" id="matchImg">
+									<img src="" alt="your new friend" id="matchImg">
 						
 								</div>
 								<h3 id="matchName"></h3>
@@ -307,25 +307,26 @@
 	</div>
 	<script type="text/javascript">
 		
-    	$('#submitter').click(function(){
+    	$('#submitter').on('submit', function(){
+
     		var friendsData = {
 	    		name: $("#name").val(),
 	    		pic: $("#pic").val(),
-	    		score: $("#one").val() + $("#two").val() + $("#three").val() + $("#four").val() + $("#five").val() + $("#six").val() + $("#seven").val() + $("#eight").val() + $("#nine").val() + $("#ten").val();
+	    		score: $("#one").val() + $("#two").val() + $("#three").val() + $("#four").val() + $("#five").val() + $("#six").val() + $("#seven").val() + $("#eight").val() + $("#nine").val() + $("#ten").val()
 	    	}
+
+	    	friendsData.push(friendsArray);
 
 	    	// Grab the URL
 	    	// var currentURL = window.location.origin;
 
 	    	// post the data to the friends API via AJAX 
-	    	$.post("localhost:3000/api/friends", userData, function(friendsData){
+	    	$.post("localhost:3000/api/friends", friendsData, function(data){
 	    		// Grab the result from the AJAX post so that the best match's name and pic are displayed.
-	    		$("#matchName").text(friendsData.name);
-	    		$('#matchImg').attr("src", friendsData.pic);
-
+	    		$("#matchName").text(data.name);
+	    		$('#matchImg').attr("src", data.pic);
 		    	// Show the modal with the best match 
 		    	$("#friendMatch").modal('toggle');
-
 	    	});
 
 	    	return false;
