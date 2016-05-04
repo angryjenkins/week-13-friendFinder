@@ -6,8 +6,6 @@
 var friendsArray = require('../data/survey-data.js');
 var path = require('path');
 
-var comparisons = [];
-
 module.exports = function(app){
 
 app.get('/api/friends', function(req, res){
@@ -21,6 +19,7 @@ app.post('/api/friends', function(req, res){
         var formData = req.body;
         console.log(formData);
         
+        var bestFriend = friendsArray[0].name;
 
         for(i=0;i<friendsArray.length;i++){
           var compatibility = 0;
@@ -57,8 +56,17 @@ app.post('/api/friends', function(req, res){
           }
           console.log(friendsArray[i].name + " compatibility rating: %s", compatibility);
 
-          this.compatibility = compatibility;
+          formData.compatibility = compatibility;
+
+          if(i != 0){
+            if(formData.compatibility > friendsArray[i-1].compatibility){
+                var bestFriend = this.name;
+            }
+          }
+          
         }
+
+        console.log('Your new friend is .... %s!', bestFriend);
 
         friendsArray.push(formData);
 
