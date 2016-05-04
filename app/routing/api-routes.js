@@ -15,31 +15,18 @@ app.get('/api/friends', function(req, res){
 });
 
 app.post('/api/friends', function(req, res){        
-        friendsArray.push(req.body);
 
         console.log("friend finder submitted! formData below"); 
         var formData = req.body;
 
         console.log(formData);
 
+        res.json(formData);
+        friendsArray.push(formData);
+
 // res.json(true);
 //add answer comparison logic.
 
-        for(var key in friendsArray){
-            var compatibility=0;
-            var diff=0;
-
-
-            var friend = {
-                    name: friendsArray[i].name,
-                    compatibility: compatibility
-            }
-
-            
-            console.log('Friend: %s', friend.name);
-            console.log('Compatibility: %s', friend.compatibility);
-            comparisons.push(friend);
-       }
 });
 
 // app.post('/api/clear', function(req, res){

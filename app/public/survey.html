@@ -23,23 +23,15 @@
 			<legend>Find a Friend!</legend>
 
 			<div class="form-group">
-				<div class="col-md-2">
-					<label class="control-label" for="name">Name</label>
-				</div>
-				<div class="col-md-10">
-					<input type="text" class="form-control" id="name" placeholder="Enter Your Name">
-				</div>
+				<label for="name">Name</label>
+				<input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name.">
 			</div>
 
 			<div class="clearfix"></div>
 
 			<div class="form-group">
-				<div class="col-md-2">
-					<label class="control-label" for="pic">Image URL</label>
-				</div>
-				<div class="col-md-10">
-					<input type="url" class="form-control" id="pic" placeholder="Picture URL">
-				</div>
+				<label for="">Image URL</label>
+				<input type="text" class="form-control" id="pic" name="pic" placeholder="Picture URL">
 			</div>
 			
 			<div class="clearfix"></div>			
@@ -48,15 +40,15 @@
 				<label class="control-label" for="one"><span class="badge">1</span> Which color do you prefer?</label>
 				<div class="radio" id="one">
 					<label>
-						<input type="radio" name="favColor" value=1 required>
+						<input type="radio" name="favColor" value="Red" required>
 						Red
 					</label>
 					<label>
-						<input type="radio" name="favColor" value=2 required>
+						<input type="radio" name="favColor" value="Green" required>
 						Green
 					</label>
 					<label>
-						<input type="radio" name="favColor" value=3 required>
+						<input type="radio" name="favColor" value="Blue" required>
 						Blue
 					</label>
 				</div>
@@ -68,19 +60,19 @@
 				<label class="control-label" for="two"><span class="badge">2</span> What sport do you like the most?</label>
 				<div class="radio" id="two">
 					<label>
-						<input type="radio" name="favSport" value=1 required>
+						<input type="radio" name="favSport" value="Baseball" required>
 						Baseball
 					</label>
 					<label>
-						<input type="radio" name="favSport" value=2 required>
+						<input type="radio" name="favSport" value="Football" required>
 						Football
 					</label>
 					<label>
-						<input type="radio" name="favSport" value=3 required>
+						<input type="radio" name="favSport" value="Basketball" required>
 						Basketball
 					</label>
 					<label>
-						<input type="radio" name="favSport" value=4 required>
+						<input type="radio" name="favSport" value="Hockey" required>
 						Hockey
 					</label>
 				</div>
@@ -92,19 +84,19 @@
 				<label class="control-label" for="three"><span class="badge">3</span> Which country would you rather travel to?</label>
 				<div class="radio" id="three">
 					<label>
-						<input type="radio" name="favCountry" value=1 required>
+						<input type="radio" name="favCountry" value="France" required>
 						France
 					</label>
 					<label>
-						<input type="radio" name="favCountry" value=2 required>
+						<input type="radio" name="favCountry" value="China" required>
 						China
 					</label>
 					<label>
-						<input type="radio" name="favCountry" value=3 required>
+						<input type="radio" name="favCountry" value="Australia" required>
 						Australia
 					</label>
 					<label>
-						<input type="radio" name="favCountry" value=4 required>
+						<input type="radio" name="favCountry" value="Brazil" required>
 					Brazil
 					</label>
 				</div>
@@ -116,19 +108,19 @@
 				<label class="control-label" for="four"><span class="badge">4</span> What would you rather do with your spare time?</label>
 				<div class="radio" id="four">
 					<label>
-						<input type="radio" name="hobby" value=1 required>
+						<input type="radio" name="hobby" value="Shop" required>
 						Shop
 					</label>
 					<label>
-						<input type="radio" name="hobby" value=2 required>
+						<input type="radio" name="hobby" value="Hunt" required>
 						Hunt
 					</label>
 					<label>
-						<input type="radio" name="hobby" value=3 required>
+						<input type="radio" name="hobby" value="Read" required>
 						Read
 					</label>
 					<label>
-						<input type="radio" name="hobby" value=4 required>
+						<input type="radio" name="hobby" value="Exercise" required>
 						Exercise
 					</label>
 				</div>
@@ -140,20 +132,20 @@
 				<label class="control-label" for="five"><span class="badge">5</span> Who would you rather have dinner with? </label>
 				<div class="radio" id="five">
 					<label>
-						<input type="radio" name="dinnerGuest" value=1 required>
+						<input type="radio" name="dinnerGuest" value="Abraham Lincoln" required>
 						Abraham Lincoln
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=2 required>
-						Martin Luther King Jr
+						<input type="radio" name="dinnerGuest" value="Martin Luther King Jr." required>
+						Martin Luther King Jr.
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=3 required>
+						<input type="radio" name="dinnerGuest" value="Prince" required>
 						Prince
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=4 required>
-						Wayne Gretzky
+						<input type="radio" name="dinnerGuest" value="Micky Mantle" required>
+						Mickey Mantle
 					</label>
 				</div>
 			</div>
@@ -164,15 +156,15 @@
 				<label class="control-label" for="six"><span class="badge">6</span> What would you rather drive to work?</label>
 				<div class="radio" id="six">
 					<label>
-						<input type="radio" name="transportation" value=1 required>
+						<input type="radio" name="transportation" value="Car" required>
 						Car
 					</label>
 					<label>
-						<input type="radio" name="transportation" value=2 required>
+						<input type="radio" name="transportation" value="Van" required>
 						Van
 					</label>
 					<label>
-						<input type="radio" name="transportation" value=3 required>
+						<input type="radio" name="transportation" value="Truck" required>
 						Truck
 					</label>
 				</div>
@@ -184,20 +176,20 @@
 				<label class="control-label" for="seven"><span class="badge">7</span> Which weapon would you use in a zombie attack?</label>
 				<div class="radio" id="seven">
 					<label>
-						<input type="radio" name="vs_zombies" value=1 required>
+						<input type="radio" name="vs_zombies" value="Shotgun" required>
 						Shotgun
 					</label>
 					<label>
-						<input type="radio" name="vs_zombies" value=2 required>
-						Flamethrower
+						<input type="radio" name="vs_zombies" value="Axe" required>
+						Axe
 					</label>
 					<label>
-						<input type="radio" name="vs_zombies" value=3 required>
+						<input type="radio" name="vs_zombies" value="Sword" required>
 						Sword
 					</label>
 					<label>
-						<input type="radio" name="vs_zombies" value=4 required>
-						Chainsaw
+						<input type="radio" name="vs_zombies" value="Crossbow" required>
+						Crossbow
 					</label>
 				</div>
 			</div>
@@ -208,19 +200,19 @@
 				<label class="control-label" for="eight"><span class="badge">8</span> What animal do you fear most?</label>
 				<div class="radio" id="eight">
 					<label>
-						<input type="radio" name="animalFear" value=1 required>
+						<input type="radio" name="animalFear" value="Spider" required>
 						Spider
 					</label>
 					<label>
-						<input type="radio" name="animalFear" value=2 required>
+						<input type="radio" name="animalFear" value="Dog" required>
 						Dog
 					</label>
 					<label>
-						<input type="radio" name="animalFear" value=3 required>
+						<input type="radio" name="animalFear" value="Snake" required>
 						Snake
 					</label>
 					<label>
-						<input type="radio" name="animalFear" value=4 required>
+						<input type="radio" name="animalFear" value="Wasp" required>
 					Wasp
 					</label>
 				</div>
@@ -232,19 +224,19 @@
 				<label class="control-label" for="nine"><span class="badge">9</span> Which cartoon character do you prefer? </label>
 				<div class="radio" id="nine">
 					<label>
-						<input type="radio" name="cartoon" value=1 required>
+						<input type="radio" name="cartoon" value="Bugs Bunny" required>
 						Bugs Bunny
 					</label>
 					<label>
-						<input type="radio" name="cartoon" value=2 required>
+						<input type="radio" name="cartoon" value="Mickey Mouse" required>
 						Mickey Mouse
 					</label>
 					<label>
-						<input type="radio" name="cartoon" value=3 required>
+						<input type="radio" name="cartoon" value="Huckleberry Hound" required>
 						Huckleberry Hound
 					</label>
 					<label>
-						<input type="radio" name="cartoon" value=4 required>
+						<input type="radio" name="cartoon" value="Bullwinkle J. Moose" required>
 						Bullwinkle J. Moose
 					</label>
 				</div>
@@ -256,20 +248,20 @@
 				<label class="control-label" for="ten"><span class="badge">10</span> What is your favorite board game?</label>
 				<div class="radio" id="ten">
 					<label>
-						<input type="radio" name="dinnerGuest" value=1 required>
+						<input type="radio" name="boardGame" value="Monopoly" required>
 						Monopoly
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=2 required>
-						CandyLand
+						<input type="radio" name="boardGame" value="Candy Land" required>
+						Candy Land
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=3 required>
+						<input type="radio" name="boardGame" value="Clue" required>
 						Clue
 					</label>
 					<label>
-						<input type="radio" name="dinnerGuest" value=4 required>
-						Life
+						<input type="radio" name="boardGame" value="Battleship" required>
+						Battleship
 					</label>
 				</div>
 			</div>
@@ -308,19 +300,32 @@
 		
     	$('#submitter').on('submit', function(){
 
-    		var friendsData = {
+    		var formData = {
 	    		name: $("#name").val(),
 	    		pic: $("#pic").val(),
-	    		score: $("#one").val() + $("#two").val() + $("#three").val() + $("#four").val() + $("#five").val() + $("#six").val() + $("#seven").val() + $("#eight").val() + $("#nine").val() + $("#ten").val()
+	    		input: [
+					$('input[name=favColor]:checked').val(), 
+					$('input[name=favSport]:checked').val(), 
+					$('input[name=favCountry]:checked').val(), 
+					$('input[name=hobby]:checked').val(), 
+					$('input[name=transportation]:checked').val(), 
+					$('input[name=vs_zombies]:checked').val(), 
+					$('input[name=animalFear]:checked').val(), 
+					$('input[name=cartoon]:checked').val(), 
+					$('input[name=dinnerGuest]:checked').val(), 
+					$('input[name=boardGame]:checked').val()
+				]
 	    	}
 
-	    	friendsData.push(friendsArray);
+	    	console.log(formData);
+
+	    	formData.push(friendsArray);
 
 	    	// Grab the URL
 	    	// var currentURL = window.location.origin;
 
 	    	// post the data to the friends API via AJAX 
-	    	$.post("localhost:3000/api/friends", friendsData, function(data){
+	    	$.post("/api/friends", formData, function(data){
 	    		// Grab the result from the AJAX post so that the best match's name and pic are displayed.
 	    		$("#matchName").text(data.name);
 	    		$('#matchImg').attr("src", data.pic);
