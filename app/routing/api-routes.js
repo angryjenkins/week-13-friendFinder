@@ -14,15 +14,55 @@ app.get('/api/friends', function(req, res){
     res.json(friendsArray);
 });
 
-app.post('/api/friends', function(req, res){        
+app.post('/api/friends', function(req, res){
 
-        console.log("friend finder submitted! formData below"); 
+        console.log("friend finder submitted! formData below");
+
         var formData = req.body;
-
         console.log(formData);
+        
 
-        res.json(formData);
+        for(i=0;i<friendsArray.length;i++){
+          var compatibility = 0;
+
+          if(friendsArray[i].favColor == formData.favColor){
+            compatibility++;
+          }
+          if(friendsArray[i].favSport == formData.favSport){
+            compatibility++;
+          }
+          if(friendsArray[i].favCountry == formData.favCountry){
+            compatibility++;
+          }
+          if(friendsArray[i].hobby == formData.hobby){
+            compatibility++;
+          }
+          if(friendsArray[i].dinnerGuest == formData.dinnerGuest){
+            compatibility++;
+          }
+          if(friendsArray[i].transportation == formData.favColor){
+            compatibility++;
+          }
+          if(friendsArray[i].vs_zombies == formData.vs_zombies){
+            compatibility++;
+          }
+          if(friendsArray[i].animalFear == formData.animalFear){
+            compatibility++;
+          }
+          if(friendsArray[i].cartoon == formData.cartoon){
+            compatibility++;
+          }
+          if(friendsArray[i].boardGame == formData.boardGame){
+            compatibility++;
+          }
+          console.log(friendsArray[i].name + " compatibility rating: %s", compatibility);
+
+          this.compatibility = compatibility;
+        }
+
         friendsArray.push(formData);
+
+
 
 // res.json(true);
 //add answer comparison logic.
@@ -37,4 +77,3 @@ app.post('/api/friends', function(req, res){
 //    })
 
 }
-
