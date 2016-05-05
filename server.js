@@ -9,7 +9,7 @@ var port = process.env.PORT || 3000; // Sets an initial port. We'll use this lat
 
 // This lets us serve content from the 'public' folder
 var staticContentFolder = __dirname + '/app/public';
-app.use(express.static(staticContentFolder));  
+app.use(express.static(staticContentFolder));
 
 // set the static files location /public/img will be /img for users// BodyParser makes it easy for our server to interpret data sent to it.
 // The code below is pretty standard.
@@ -27,7 +27,6 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 require('./app/routing/api-routes.js')(app);
 require('./app/routing/html-routes.js')(app);
-
 
 // ==============================================================================
 // LISTENER
